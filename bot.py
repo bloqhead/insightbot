@@ -109,8 +109,6 @@ async def openai_text(input) :
     async with session.post(url, json = payload, headers = headers) as res:
       output = await res.json()
       disclaimer = '\n\n\n---\n\n*^Beep ^boop! ^I ^am ^a ^bot ^that ^replies ^using ^the ^[OpenAI](https://openai.com/api/) ^api. ^Please ^contact ^/u/metalandcode ^if ^you ^have ^any ^questions.*'
-
-      print(output)
       
       # ensure response is valid
       if output and output['choices'][0] :
